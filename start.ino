@@ -21,9 +21,9 @@ const char *password = "";
 const char *balanceJsonField = "balance";
 
 // Waves public node URI
-const char *host = "nodes.wavesnodes.com";
+const char *host = "node.mir.one";
 const int port = 80;
-const String address = "3P7CHn3nndASs6UqgUf9atBEgue7C4cANdY";
+const String address = "Address Wallet";
 
 // Price of one candy
 const unsigned long long price = 100000000;
@@ -76,7 +76,7 @@ void loop() {
     if (candiesToGive > 0) {
         if (myStepper.distanceToGo() == 0) {
             candiesToGive--;
-            Serial.printf("[Candy was given, %d left]\n", candiesToGive);
+            Serial.printf("[Motor was given, %d left]\n", candiesToGive);
             myStepper.moveTo(myStepper.currentPosition() - stepsPerRevolution / 2);
         }
         myStepper.run();
