@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 
-// Determines the type used to store integer values in JsonVariant.
+// Определяет тип, используемый для хранения целочисленных значений в JsonVariant. 
 // 0 - Long
 // 1 - Long Long
 #define ARDUINOJSON_USE_LONG_LONG 1
@@ -11,7 +11,7 @@
 
 AccelStepper myStepper(8, 13, 14, 12, 16);
 
-// Steps per revolution for our motor
+// Количество шагов для оборота шагового двигателя
 const int stepsPerRevolution = 4076;
 
 // Настройка Wi-Fi
@@ -45,8 +45,8 @@ void connectToWiFi(){
 }
 
 void setup() {
-    // Sets the data rate in bits per second (baud) for serial data transmission.
-    // For communicating with the computer we can use 115200
+    // Устанавливает скорость передачи данных в битах в секунду (бод) для последовательной передачи данных.
+    // Для связи с компьютером используйте 115200
     Serial.begin(115200);
     Serial.println();
 
@@ -119,7 +119,7 @@ void loop() {
             Serial.println("connection failed!]");
             client.stop();
         }
-        // Wait for the 5 sec. before next check
+        // Подождите 5 секунд перед следующим действием
         delay(5000);
     }
 }
