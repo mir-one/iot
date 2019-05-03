@@ -20,8 +20,8 @@ const char *password = "";
 
 const char *balanceJsonField = "balance";
 
-// Адрес ноды
-const char *host = "node.mir.one";
+// Адрес кубсат ноды МИР
+const char *host = "192.168.0.100";
 const int port = 80;
 const String address = "Address Wallet";
 
@@ -50,8 +50,8 @@ void setup() {
     Serial.begin(115200);
     Serial.println();
 
-    // The desired constant speed in steps per second. Positive is clockwise.
-    // Speeds of more than 1000 steps per second are unreliable.
+    // Желаемая постоянная скорость в шагах в секунду. Положительное значение по часовой стрелке.
+    // Скорости более 1000 шагов в секунду ненадежны.
     myStepper.setMaxSpeed(700.0);
     myStepper.setAcceleration(700.0);
     myStepper.setSpeed(700);
@@ -67,7 +67,7 @@ void setup() {
 
 void loop() {
 
-    // Check WiFi connection and reconnect if needed
+    // Проверяет WiFi и переподключает при необходимости
     if (WiFi.status() != WL_CONNECTED){
         WiFi.disconnect();
         connectToWiFi();
@@ -81,7 +81,7 @@ void loop() {
         }
         myStepper.run();
     } else {
-        // Client will make HTTP requests and get JSON response
+        // Устройство сделает HTTP-запросы и получит ответ JSON
         WiFiClient client;
 
         Serial.printf("\n[Connecting to %s ... ", host);
@@ -124,9 +124,9 @@ void loop() {
     }
 }
 
-// Function to print long long numbers
+// Функция для печати long long чисел
 void printLLNumber(unsigned long long n, uint8_t base) {
-    unsigned char buf[16 * sizeof(long)]; // Assumes 8-bit chars.
+    unsigned char buf[16 * sizeof(long)]; // Предполагает 8-битные символы.
     unsigned long long i = 0;
 
     if (n == 0) {
