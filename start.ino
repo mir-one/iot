@@ -14,18 +14,18 @@ AccelStepper myStepper(8, 13, 14, 12, 16);
 // Steps per revolution for our motor
 const int stepsPerRevolution = 4076;
 
-// Wi-Fi settings
+// Настройка Wi-Fi
 const char *ssid = "";
 const char *password = "";
 
 const char *balanceJsonField = "balance";
 
-// Waves public node URI
+// Адрес ноды
 const char *host = "node.mir.one";
 const int port = 80;
 const String address = "Address Wallet";
 
-// Price of one candy
+// Стоимость действия
 const unsigned long long price = 100000000;
 
 DynamicJsonBuffer jsonBuffer;
